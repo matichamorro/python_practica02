@@ -30,7 +30,6 @@ def replace_spoilers(review, spoilers):
             review_without_spoilers += f"{word} "
     print(review_without_spoilers)
     
-    
-#print(review.find("Torres"))
+
 spoilers = input_spoilers()
 replace_spoilers(review, spoilers)

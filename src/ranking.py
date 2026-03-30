@@ -81,12 +81,12 @@ def rank_round(round):
     scores = round['scores']
     # generar un dict con formato "nombre: puntaje_total"
     p_score = {participant: sum(score.values()) for participant, score in scores.items()}
-    # reordeno el dict separando en items (0: nombre, 1: puntaje_total), buscando en [1] y de mayor a menor (reverse=true)
+    # reordenar el dict separando en items (0: nombre, 1: puntaje_total), buscando en [1] y de mayor a menor (reverse=true)
     p_score = sorted(p_score.items(), key=lambda item: item[1], reverse=True)
     return p_score
 
 def generate_ranking(rounds):
-    # iniciar un marcador global
+    # iniciar un marcador global de los datos a guardar
     global_scoreboard = {name: {'total': 0,
                             'r_won': 0,
                             'best_round': 0
@@ -121,9 +121,10 @@ def generate_ranking(rounds):
     print("--------------------------------------------------------------------")
     for name in global_scoreboard:
         values =  global_scoreboard[name]
-        print(f"{name:<9}      {values['total']:<9}       {values['r_won']:<11}   {values['best_round']:^8}      {values['total'] / 5:^10}")
+        print(f"{name:<9}      {values['total']:<9}       {values['r_won']:<11}   {values['best_round']:^8}      {values['total'] / len(rounds):^10}")
     print("--------------------------------------------------------------------")
 
+# Por si se quiere probar a ejecutarlo desde este archivo
 if __name__ == "__main__":
     generate_ranking(rounds)
 

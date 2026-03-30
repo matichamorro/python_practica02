@@ -1,4 +1,3 @@
-from collections import Counter as c
 
 def validate_email():
     email = input("Ingrese un email: ")

@@ -115,11 +115,16 @@ def generate_ranking(rounds):
 
         print()
 
+    # reordenar el global_scoreboard
+    final_ranking = sorted([(name, global_scoreboard[name]['total']) for name in global_scoreboard], 
+                           key=lambda item: item[1], 
+                           reverse=True)
 
     print('Tabla de posiciones final:')
     print("Cocinero     Puntaje     Rondas ganadas     Mejor ronda     Promedio")
     print("--------------------------------------------------------------------")
-    for name in global_scoreboard:
+    for item in final_ranking:
+        name = item[0]
         values =  global_scoreboard[name]
         print(f"{name:<9}      {values['total']:<9}       {values['r_won']:<11}   {values['best_round']:^8}      {values['total'] / len(rounds):^10}")
     print("--------------------------------------------------------------------")

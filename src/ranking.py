@@ -104,7 +104,7 @@ def generate_ranking(rounds):
         
         print(f"    Ganador/a: {current_winner[0]} ({current_winner[1]} pts)")
         for i in range(1,5):
-            print(f"    {i}. {current_round[i][0]} ({current_round[i][1]} pts)")
+            print(f"    {i+1}. {current_round[i][0]} ({current_round[i][1]} pts)")
         
         # usar el valor de retorno de la funcion para aumentar los marcadores globales
         global_scoreboard[current_winner[0]]['r_won'] += 1

@@ -103,7 +103,6 @@ def generate_ranking(rounds):
         current_winner = current_round[0]
         
         print(f"    Ganador/a: {current_winner[0]} ({current_winner[1]} pts)")
-        index_current_round = list(enumerate(current_round, 1))
         for i in range(1,5):
             print(f"    {i}. {current_round[i][0]} ({current_round[i][1]} pts)")
         

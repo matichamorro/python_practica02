@@ -42,12 +42,12 @@ def longest_and_shortest_song(playlist):
     
     return longest_song, shortest_song
    
+def playlist_durations(playlist):
+    total_dur = total_duration(playlist)
+    print(total_dur)
 
-total_dur = total_duration(playlist)
-print(total_dur)
+    max_song, min_song = longest_and_shortest_song(playlist)
 
-max_song, min_song = longest_and_shortest_song(playlist)
-
-print(f'Canción más larga: "{playlist[max_song]['title']}" ({playlist[max_song]['duration']})')
-print(f'Canción más corta: "{playlist[min_song]['title']}" ({playlist[min_song]['duration']})')
+    print(f'Canción más larga: "{playlist[max_song]['title']}" ({playlist[max_song]['duration']})')
+    print(f'Canción más corta: "{playlist[min_song]['title']}" ({playlist[min_song]['duration']})')
 

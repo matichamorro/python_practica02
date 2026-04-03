@@ -44,7 +44,7 @@ def longest_and_shortest_song(playlist):
    
 def playlist_durations(playlist):
     total_dur = total_duration(playlist)
-    print(total_dur)
+    print(f"Duración total: {total_dur}")
 
     max_song, min_song = longest_and_shortest_song(playlist)
 

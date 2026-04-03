@@ -21,7 +21,8 @@ def input_spoilers():
 
     return spoiler_list
 
-def replace_spoilers(review, spoilers):
+def replace_spoilers(review):
+    spoilers = input_spoilers()
     review_without_spoilers = ""
     for word in review.split():
         if word.upper() in spoilers:
@@ -30,6 +31,3 @@ def replace_spoilers(review, spoilers):
             review_without_spoilers += f"{word} "
     print(review_without_spoilers)
     
-
-spoilers = input_spoilers()
-replace_spoilers(review, spoilers)

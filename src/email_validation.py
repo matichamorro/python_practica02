@@ -9,5 +9,3 @@ def validate_email():
                 if len(email_ending[1]) >= 2:
                     validating = "El email es válido."
     print(validating)
-    
-validate_email()
